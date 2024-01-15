@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./styles";
+import logoImage from "../../Assets/Imagens/logo-leticia.png";
 import imagemVet1 from "../../Assets/Imagens/Vet-gato.jpg";
 import imagemVet2 from "../../Assets/Imagens/vet-mao.jpg";
 import imagemVet3 from "../../Assets/Imagens/vet-cao.jpg";
@@ -7,7 +8,14 @@ import curativo from "../../Assets/Imagens/curativo.png";
 import vacina from "../../Assets/Imagens/vacina.png";
 import consulta from "../../Assets/Imagens/consulta.png";
 import medicamentos from "../../Assets/Imagens/medicamentos.png";
-import { CaretUpSquareFill } from "react-bootstrap-icons";
+import veterinario from "../../Assets/Imagens/veterinario.png";
+import geriatrico from "../../Assets/Imagens/geriatrico.png";
+import {
+  CaretUpSquareFill,
+  Instagram,
+  Facebook,
+  Whatsapp,
+} from "react-bootstrap-icons";
 
 interface FeaturetteImageProps {
   className: string;
@@ -145,6 +153,7 @@ export const Main: React.FC = () => {
       {/* Marketing messaging and featurettes */}
       <S.MarketingContainer className="container marketing">
         {/* Three columns of text below the carousel */}
+
         <div className="row">
           <S.Column className="col-lg-4">
             <FeaturetteImage
@@ -167,27 +176,27 @@ export const Main: React.FC = () => {
           <S.Column className="col-lg-4">
             <FeaturetteImage
               className="bd-placeholder-img  img-fluid mx-auto"
-              src={consulta}
+              src={veterinario}
               alt="Descrição da sua imagem"
             />
-            <h2 className="fw-normal">Consultas</h2>
+            <h2 className="fw-normal">Bem estar</h2>
             <p>
-              And lastly this, the third column of representative placeholder
-              content.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+              quibusdam odio, minus repudiandae sit, nulla eveniet fuga animi
             </p>
             <p>
               <S.CustomButton className="btn btn-secondary" href="#">
-                View details &raquo;
+                Marque uma consulta &raquo;
               </S.CustomButton>
             </p>
           </S.Column>
           <S.Column className="col-lg-4">
             <FeaturetteImage
               className="bd-placeholder-img  img-fluid mx-auto"
-              src={curativo}
+              src={geriatrico}
               alt="Descrição da sua imagem"
             />
-            <h2 className="fw-normal">Curativos</h2>
+            <h2 className="fw-normal">Aconselhamentos</h2>
             <p>
               Curativos ou imobilização pós-traumáticas e manutenções
               pós-cirúrgica. Os materiais são levados pelo o medico veterinário.
@@ -204,12 +213,13 @@ export const Main: React.FC = () => {
               src={medicamentos}
               alt="Descrição da sua imagem"
             />
-            <h2 className="fw-normal">Administração de medicamentos</h2>
+            <h2 className="fw-normal"> Medicamentos</h2>
             <p>
               Via: oral, subcutânea e intramuscular. Para medicamentos simples,
-              é necessário comprá-los antes da consulta; e para mais complexos,
-              o veterinário pode levar.
+              é necessário comprá-los antes da consulta.
             </p>
+            <br />
+
             <p>
               <S.CustomButton className="btn btn-secondary" href="#">
                 Marque uma consulta &raquo;
@@ -251,124 +261,39 @@ export const Main: React.FC = () => {
             </p>
           </S.Column>
         </div>
-
-        {/* START THE FEATURETTES */}
-
-        <hr className="featurette-divider" />
-
-        <S.Featurette className="row featurette">
-          <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">
-              First featurette heading.{" "}
-              <span className="text-body-secondary">It’ll blow your mind.</span>
-            </h2>
-            <p className="lead">
-              Some great placeholder content for the first featurette here.
-              Imagine some exciting prose here.
-            </p>
-          </div>
-          <div className="col-md-5">
-            <S.FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </S.FeaturetteImage>
-          </div>
-        </S.Featurette>
-
-        <hr className="featurette-divider" />
-
-        <S.Featurette className="row featurette">
-          <div className="col-md-7 order-md-2">
-            <h2 className="featurette-heading fw-normal lh-1">
-              Oh yeah, its that good.{" "}
-              <span className="text-body-secondary">See for yourself.</span>
-            </h2>
-            <p className="lead">
-              Another featurette? Of course. More placeholder content here to
-              give you an idea of how this layout would work with some actual
-              real-world content in place.
-            </p>
-          </div>
-          <div className="col-md-5 order-md-1">
-            <S.FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </S.FeaturetteImage>
-          </div>
-        </S.Featurette>
-
-        <hr className="featurette-divider" />
-
-        <S.Featurette className="row featurette">
-          <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">
-              And lastly, this one.{" "}
-              <span className="text-body-secondary">Checkmate.</span>
-            </h2>
-            <p className="lead">
-              And yes, this is the last block of representative placeholder
-              content. Again, not really intended to be actually read, simply
-              here to give you a better view of what this would look like with
-              some actual content. Your content.
-            </p>
-          </div>
-          <div className="col-md-5">
-            <S.FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </S.FeaturetteImage>
-          </div>
-        </S.Featurette>
-
-        <hr className="featurette-divider" />
-
-        {/* /END THE FEATURETTES */}
       </S.MarketingContainer>
 
-      {/* FOOTER */}
-      <S.Footer className="container">
-        <S.BackToTop className="float-end">
-          <a href="#">
-            <CaretUpSquareFill color="#98d1b1" />
-          </a>
-        </S.BackToTop>
-      </S.Footer>
+      <S.ContainerDivider>
+        <S.FooterContainer>
+          <S.LogoWrapper>
+            <S.LogoLink href="/">
+              <img src={logoImage} alt="Logo" width="50" height="50" />
+            </S.LogoLink>
+            <S.CompanyName>
+              &copy; Infotoll 2020-2024. Transformando ideias em realidade.
+              Todos os direitos reservados.
+            </S.CompanyName>
+          </S.LogoWrapper>
+
+          <S.SocialList>
+            <S.SocialItem>
+              <S.SocialLink href="#">
+                <Whatsapp width="24" height="24" />
+              </S.SocialLink>
+            </S.SocialItem>
+            <S.SocialItem>
+              <S.SocialLink href="#">
+                <Facebook width="24" height="24" />
+              </S.SocialLink>
+            </S.SocialItem>
+            <S.SocialItem>
+              <S.SocialLink href="#">
+                <Instagram width="24" height="24" />
+              </S.SocialLink>
+            </S.SocialItem>
+          </S.SocialList>
+        </S.FooterContainer>
+      </S.ContainerDivider>
     </S.MainWrapper>
   );
 };

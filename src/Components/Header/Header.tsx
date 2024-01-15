@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import * as S from "./styles";
-import imageLogo from "../../Assets/Imagens/logo-leticia.png";
+import logoImage from "../../Assets/Imagens/logo-leticia.png";
 import {
   HandIndexThumb,
-  HeartPulse,
+  HouseDoor,
   MenuButtonWide,
-  Briefcase,
+  HeartPulse,
   Phone,
 } from "react-bootstrap-icons";
 
@@ -35,7 +35,7 @@ export const HeaderComponent: React.FC = () => {
               className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
             >
               <span>
-                <h1>Franzolin</h1>
+                <img src={logoImage} alt="" width="65" height="65" />
               </span>
             </S.LogoLink>
 
@@ -43,14 +43,28 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="#"
+                    href="/"
+                    className="nav-link "
+                    hovered={hovered}
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                  >
+                    <HouseDoor size={24} />
+                    <span>Home</span>
+                  </S.NavLink>
+                )}
+              </S.NavItem>
+              <S.NavItem>
+                {windowWidth > 800 && (
+                  <S.NavLink
+                    href="/como-funciona"
                     className="nav-link "
                     hovered={hovered}
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                   >
                     <HandIndexThumb size={24} />
-                    <span>Como Funciona</span>
+                    Como Funciona
                   </S.NavLink>
                 )}
               </S.NavItem>
@@ -65,20 +79,6 @@ export const HeaderComponent: React.FC = () => {
                   >
                     <HeartPulse size={24} />
                     Cuidados Animais
-                  </S.NavLink>
-                )}
-              </S.NavItem>
-              <S.NavItem>
-                {windowWidth > 800 && (
-                  <S.NavLink
-                    href="#"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                  >
-                    <Briefcase size={24} />
-                    Serviços
                   </S.NavLink>
                 )}
               </S.NavItem>
