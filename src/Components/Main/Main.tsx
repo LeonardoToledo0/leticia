@@ -10,6 +10,9 @@ import consulta from "../../Assets/Imagens/consulta.png";
 import medicamentos from "../../Assets/Imagens/medicamentos.png";
 import veterinario from "../../Assets/Imagens/veterinario.png";
 import geriatrico from "../../Assets/Imagens/geriatrico.png";
+import parasita from "../../Assets/Imagens/parasita.png";
+import exame from "../../Assets/Imagens/exame.png";
+import saude from "../../Assets/Imagens/saude.png";
 import {
   CaretUpSquareFill,
   Instagram,
@@ -29,6 +32,84 @@ const FeaturetteImage: React.FC<FeaturetteImageProps> = ({
   alt,
 }) => <img className={className} src={src} alt={alt} />;
 
+const carouselItems = [
+  {
+    src: imagemVet1,
+    alt: "Descrição da imagem 1",
+    caption: {
+      title: "Manchete de Exemplo 1",
+      text: "Algum conteúdo representativo de espaço reservado para o primeiro slide do carrossel.",
+      alignment: "text-start",
+    },
+  },
+  {
+    src: imagemVet2,
+    alt: "Descrição da imagem 2",
+    caption: {
+      title: "Manchete de Exemplo 2",
+      text: "Algum conteúdo representativo de espaço reservado para o segundo slide do carrossel.",
+      alignment: "",
+    },
+  },
+  {
+    src: imagemVet3,
+    alt: "Descrição da imagem 3",
+    caption: {
+      title: "Manchete de Exemplo 3",
+      text: "Algum conteúdo representativo de espaço reservado para o terceiro slide do carrossel.",
+      alignment: "text-end",
+    },
+  },
+];
+
+const featuretteColumns = [
+  {
+    image: consulta,
+    title: "Consultas",
+    text: "Consultas de rotina ou checkup, pediátrica, geriátrica ou com especialista. Incluso um retorno em até 30 dias, suporte do veterinário.",
+  },
+  {
+    image: veterinario,
+    title: " Higiene",
+    text: "Proporcione ao seu pet um ambiente seguro e saudável com nossos serviços especializados, abrangendo escovação e limpeza de orelhas.",
+  },
+  {
+    image: geriatrico,
+    title: "Monitoramento",
+    text: "Observamos de perto o comportamento, apetite e atividade física do seu pet, garantindo detecção precoce e cuidados dedicados para sua felicidade e bem-estar.",
+  },
+  {
+    image: medicamentos,
+    title: " Medicamentos",
+    text: "Via: oral, subcutânea e intramuscular. Para medicamentos simples, é necessário comprá-los antes da consulta.",
+  },
+  {
+    image: vacina,
+    title: "Vacinas",
+    text: "Cães: V8, V10, antirrábica, gripe e giárdia. Gatos: V3, V4, V5 e antirrábica. Para aplicação de vacinas você não paga a consulta.",
+  },
+  {
+    image: curativo,
+    title: "Curativos",
+    text: "Curativos ou imobilização pós-traumáticas e manutenções pós-cirúrgica. Os materiais são levados pelo o médico veterinário.",
+  },
+  {
+    image: parasita,
+    title: "Controle de parasitas",
+    text: "Proporcionamos cuidado abrangente para o controle de parasitas, assegurando a saúde dos seus animais com soluções eficazes e personalizadas.",
+  },
+  {
+    image: exame,
+    title: "Exame Clínico",
+    text: "Realizamos análises laboratoriais essenciais, coletando amostras para diagnósticos precisos e cuidados de saúde veterinária de alta qualidade.",
+  },
+  {
+    image: saude,
+    title: "Aconselhamento",
+    text: "Fornecemos orientação veterinária personalizada e consultas especializadas para garantir o bem-estar ideal do seu animal de estimação.",
+  },
+];
+
 export const Main: React.FC = () => {
   return (
     <S.MainWrapper>
@@ -38,91 +119,37 @@ export const Main: React.FC = () => {
         data-bs-ride="carousel"
       >
         <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+          {carouselItems.map((item, index) => (
+            <button
+              key={index}
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to={index.toString()}
+              className={index === 0 ? "active" : ""}
+              aria-current={index === 0 ? "true" : undefined}
+              aria-label={`Slide ${index + 1}`}
+            ></button>
+          ))}
         </div>
         <div className="carousel-inner">
-          <S.CarouselItem className="carousel-item active">
-            <FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              src={imagemVet1} // Substitua pelo caminho correto da sua imagem
-              alt="Descrição da imagem 1"
-            />
-            <S.Container className="container">
-              <div className="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p className="opacity-75">
-                  Some representative placeholder content for the first slide of
-                  the carousel.
-                </p>
-                <p>
-                  <S.CustomButton className="btn btn-secondary" href="#">
-                    Sing Up Today &raquo;
-                  </S.CustomButton>
-                </p>
-              </div>
-            </S.Container>
-          </S.CarouselItem>
-          <S.CarouselItem className="carousel-item">
-            <FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              src={imagemVet2} // Substitua pelo caminho correto da sua imagem
-              alt="Descrição da imagem 1"
-            />
-            <S.Container className="container">
-              <div className="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Some representative placeholder content for the second slide
-                  of the carousel.
-                </p>
-                <p>
-                  <S.CustomButton className="btn btn-secondary" href="#">
-                    Learn More &raquo;
-                  </S.CustomButton>
-                </p>
-              </div>
-            </S.Container>
-          </S.CarouselItem>
-          <S.CarouselItem className="carousel-item">
-            <FeaturetteImage
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              src={imagemVet3} // Substitua pelo caminho correto da sua imagem
-              alt="Descrição da imagem 1"
-            />
-            <S.Container className="container">
-              <div className="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>
-                  Some representative placeholder content for the third slide of
-                  this carousel.
-                </p>
-                <p>
-                  <S.CustomButton className="btn btn-secondary" href="#">
-                    Browse gallery &raquo;
-                  </S.CustomButton>
-                </p>
-              </div>
-            </S.Container>
-          </S.CarouselItem>
+          {carouselItems.map((item, index) => (
+            <S.CarouselItem
+              key={index}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+            >
+              <FeaturetteImage
+                className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                src={item.src}
+                alt={item.alt}
+              />
+              <S.Container className="container">
+                <div className={`carousel-caption ${item.caption.alignment}`}>
+                  <h1>{item.caption.title}</h1>
+                  <p className="opacity-75">{item.caption.text}</p>
+                </div>
+              </S.Container>
+            </S.CarouselItem>
+          ))}
         </div>
         <button
           className="carousel-control-prev"
@@ -134,7 +161,7 @@ export const Main: React.FC = () => {
             className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Previous</span>
+          <span className="visually-hidden">Anterior</span>
         </button>
         <button
           className="carousel-control-next"
@@ -146,120 +173,23 @@ export const Main: React.FC = () => {
             className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Next</span>
+          <span className="visually-hidden">Próximo</span>
         </button>
       </S.Carousel>
 
-      {/* Marketing messaging and featurettes */}
       <S.MarketingContainer className="container marketing">
-        {/* Three columns of text below the carousel */}
-
         <div className="row">
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={consulta}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal">Consultas</h2>
-            <p>
-              Consultas de rotina ou checkup, pediátrica, geriátrica ou com
-              especialista. Incluso um retorno em até 30 dias, suporte do
-              veterinário.
-            </p>
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta &raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={veterinario}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal">Bem estar</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              quibusdam odio, minus repudiandae sit, nulla eveniet fuga animi
-            </p>
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta &raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={geriatrico}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal">Aconselhamentos</h2>
-            <p>
-              Curativos ou imobilização pós-traumáticas e manutenções
-              pós-cirúrgica. Os materiais são levados pelo o medico veterinário.
-            </p>
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta &raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={medicamentos}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal"> Medicamentos</h2>
-            <p>
-              Via: oral, subcutânea e intramuscular. Para medicamentos simples,
-              é necessário comprá-los antes da consulta.
-            </p>
-            <br />
-
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta &raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={vacina}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal">Aplicação de Vacinas</h2>
-            <p>
-              Cães: V8, V10, antirrábica, gripee giárdia. Gatos: V3, V4, V5 e
-              antirrábica. Para aplicação de vacinas você não paga a consulta.
-            </p>
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta&raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
-          <S.Column className="col-lg-4">
-            <FeaturetteImage
-              className="bd-placeholder-img  img-fluid mx-auto"
-              src={curativo}
-              alt="Descrição da sua imagem"
-            />
-            <h2 className="fw-normal">Curativos</h2>
-            <p>
-              Curativos ou imobilização pós-traumáticas e manutenções
-              pós-cirúrgica. Os materiais são levados pelo o medico veterinário.
-            </p>
-            <p>
-              <S.CustomButton className="btn btn-secondary" href="#">
-                Marque uma consulta &raquo;
-              </S.CustomButton>
-            </p>
-          </S.Column>
+          {featuretteColumns.map((column, index) => (
+            <S.Column key={index} className="col-lg-4">
+              <FeaturetteImage
+                className="bd-placeholder-img  img-fluid mx-auto"
+                src={column.image}
+                alt={`Descrição da imagem ${index + 1}`}
+              />
+              <h3 className="fw-normal">{column.title}</h3>
+              <p>{column.text}</p>
+            </S.Column>
+          ))}
         </div>
       </S.MarketingContainer>
 

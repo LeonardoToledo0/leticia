@@ -1,5 +1,7 @@
 import styled from "styled-components";
-export const MainWrapper = styled.main`
+import InputMask from "react-input-mask";
+
+export const Box = styled.div`
   background-image: linear-gradient(#98d1b1, #7994a5);
   width: 100%;
   min-height: 100vh;
@@ -10,8 +12,7 @@ export const MainWrapper = styled.main`
   margin: 0;
   box-sizing: border-box;
   color: rgb(var(--bs-tertiary-color-rgb));
-
-  & h1,
+  & & h1,
   & h3 {
     font-family: "Playfair Display", serif;
     font-style: italic;
@@ -22,58 +23,88 @@ export const MainWrapper = styled.main`
     padding: auto;
   }
 `;
-
-export const TitleComoFunciona = styled.h1`
-  padding: 3rem;
-  font-size: 4em;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: white;
-  font-family: "Playfair Display", serif;
-`;
-export const HrDivider = styled.hr`
-  background-color: white !important;
-  height: 1px;
-  border: none;
-`;
-export const MarketingContainer = styled.div`
-  /* Estilos para o container de marketing aqui */
-
-  margin-bottom: 1.5rem;
-  text-align: center;
-
-  & p {
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
+export const BoxTotal = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  padding: 15px;
+  border-radius: 15px;
+  width: 50%;
+  @media (max-width: 800px) {
+    width: 90%;
+    margin-top: 150px;
   }
 `;
-
-export const Column = styled.div`
-  margin-top: 2rem;
-  background-color: #7994a5;
+export const BoxForm = styled.form`
+  color: white;
+  width: 100%;
+`;
+export const BoxFormTitle = styled.fieldset`
+  padding: 2rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+`;
+export const TitleContent = styled.h1`
   text-align: center;
+
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+`;
+export const InputBox = styled.div`
+  position: relative;
+`;
+export const InputLabel = styled.label`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  transition: 0.5s;
 `;
 
-export const Featurette = styled.div`
-  /* Estilos para os featurettes aqui */
-  text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  border-radius: 5px;
+export const InputLabel2 = styled.label``;
+export const InputField = styled.input``;
 
-  margin: 5rem 0;
-  letter-spacing: -0.05rem;
+export const InputUser = styled.input`
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  letter-spacing: 2px;
+
+  &:focus + ${InputLabel}, &:valid + ${InputLabel} {
+    top: -50px;
+    font-size: 14px;
+    color: #7994a5;
+  }
+`;
+export const SelectoParagraf = styled.p`
   color: white;
 `;
 
-export const FeaturetteImage = styled.svg`
-  /* Estilos para as imagens dos featurettes aqui */
+export const ButtonSubmit = styled.button`
+  background-color: #7994a5;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #638b97;
+  }
 `;
 
 export const ContainerDivider = styled.div`
   background-color: #333;
   width: 100%;
-  font-family: "Playfair Display", serif;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

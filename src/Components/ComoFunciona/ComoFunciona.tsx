@@ -8,12 +8,7 @@ import sevicos from "../../Assets/Imagens/servicos.jpg";
 import domiciliar from "../../Assets/Imagens/domiciliar.jpg";
 import pagamento from "../../Assets/Imagens/pagamento.jpg";
 import rx from "../../Assets/Imagens/RX.jpg";
-import {
-  CaretUpSquareFill,
-  Instagram,
-  Facebook,
-  Whatsapp,
-} from "react-bootstrap-icons";
+import { Instagram, Facebook, Whatsapp } from "react-bootstrap-icons";
 interface FeaturetteImageProps {
   className: string;
   src: string;
@@ -30,7 +25,7 @@ export const ComoFunciona: React.FC = () => {
     <>
       <S.MainWrapper>
         <S.TitleComoFunciona>Como Funciona</S.TitleComoFunciona>
-        <S.HrDivider />
+
         <S.MarketingContainer className="container marketing">
           <S.Featurette className="row featurette">
             <div className="col-md-7">

@@ -7,7 +7,7 @@ import {
   HandIndexThumb,
   HouseDoor,
   MenuButtonWide,
-  HeartPulse,
+  PersonCircle,
   Phone,
 } from "react-bootstrap-icons";
 
@@ -71,21 +71,21 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="#"
+                    href="/sobre"
                     className="nav-link "
                     hovered={hovered}
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                   >
-                    <HeartPulse size={24} />
-                    Cuidados Animais
+                    <PersonCircle size={24} />
+                    Sobre
                   </S.NavLink>
                 )}
               </S.NavItem>
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="#"
+                    href="/contato"
                     className="nav-link "
                     hovered={hovered}
                     onMouseEnter={() => setHovered(true)}
@@ -99,7 +99,7 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {window.innerWidth <= 800 && (
                   <S.NavLink
-                    href="#"
+                    href="/contato"
                     className="nav-link "
                     hovered={hovered}
                     onMouseEnter={() => setHovered(true)}

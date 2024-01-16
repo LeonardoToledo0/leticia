@@ -1,19 +1,26 @@
 import styled from "styled-components";
 
 export const MainWrapper = styled.main`
-  background-color: #7994a5;
-  width: 100vw;
-  height: 100vh;
+  background-image: linear-gradient(#98d1b1, #7994a5);
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Garante que o conteúdo se estenda até o rodapé */
+  justify-content: space-between;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(var(--bs-tertiary-color-rgb));
 
-  body {
-    background-color: #7994a5;
-    margin: 0; /* Remove a margem padrão do body */
-    padding: 3rem; /* Adicionei o padding diretamente aqui para ocupar toda a altura */
-    box-sizing: border-box; /* Garante que o padding seja incluído no tamanho total do elemento */
-    color: rgb(var(--bs-tertiary-color-rgb));
+  & h1,
+  & h3 {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    /* Ajuste os estilos para telas menores conforme necessário */
+    padding: auto;
   }
 `;
 export const HrDivider = styled.hr`
@@ -67,30 +74,32 @@ export const Carousel = styled.div`
 
 export const CarouselItem = styled.div`
   /* Estilos para os itens do carousel aqui */
-  background-color: #7994a5;
 `;
 
 export const Container = styled.div`
   /* Estilos para o container aqui */
-  background-color: #7994a5;
 `;
 
 export const MarketingContainer = styled.div`
   /* Estilos para o container de marketing aqui */
-  background-color: #7994a5;
-  margin-bottom: 0;
+
+  margin-bottom: 20px;
+  padding: 20px;
   text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
 `;
 
 export const Column = styled.div`
-  margin-top: 2rem;
-  background-color: #7994a5;
+  margin-top: 3rem;
+
   text-align: center;
 `;
 
 export const Featurette = styled.div`
   /* Estilos para os featurettes aqui */
-  background-color: #7994a5;
+
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -102,13 +111,10 @@ export const Featurette = styled.div`
 `;
 
 export const FeaturetteImage = styled.svg`
-  background-color: #7994a5;
   /* Estilos para as imagens dos featurettes aqui */
 `;
 
 export const CustomButton = styled.a`
-  background-color: #98d1b1;
-
   /* Adicione outros estilos necessários */
 `;
 export const BackToTop = styled.p`
@@ -123,7 +129,6 @@ export const BackToTop = styled.p`
 export const ContainerDivider = styled.div`
   background-color: #333;
   width: 100%;
-  max-width: 1920px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -149,7 +154,9 @@ export const LogoWrapper = styled.div`
 
 export const LogoLink = styled.a`
   text-decoration: none;
-  color: #212529; /* Ajuste conforme necessário */
+  margin: auto 25px;
+
+  margin-right: auto;
 `;
 
 export const CompanyName = styled.span`
@@ -160,13 +167,13 @@ export const CompanyName = styled.span`
 export const SocialList = styled.ul`
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 10px auto;
+  padding: 10px;
   margin-left: auto; /* Empurra os itens sociais para a direita */
 `;
 
 export const SocialItem = styled.li`
-  margin-left: 20px; /* Ajuste conforme necessário */
+  margin-left: 30px; /* Ajuste conforme necessário */
 `;
 
 export const SocialLink = styled.a`

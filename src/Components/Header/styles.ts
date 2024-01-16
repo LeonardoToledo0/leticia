@@ -35,12 +35,15 @@ export const Navigation = styled.ul<NavigationProps>``;
 export const NavItem = styled.li<NavItemProps>``;
 
 export const NavLink = styled.a<NavLinkProps>`
+  font-family: "Playfair Display", serif;
+  font-style: italic;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   margin-top: 5px;
+  font-family: "Playfair Display", serif;
 
   &:hover {
     color: #7994a5;

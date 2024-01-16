@@ -5,6 +5,8 @@ import { ComoFunciona } from "./Components/ComoFunciona/ComoFunciona";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
+import { Contato } from "./Components/Contato/Contato";
+import { Sobre } from "./Components/Sobre/Sobre";
 
 const HomePage: React.FC = () => {
   return (
@@ -23,6 +25,22 @@ const ComoFuncionaPage: React.FC = () => {
     </>
   );
 };
+const ContatoPage: React.FC = () => {
+  return (
+    <>
+      <HeaderComponent />
+      <Contato />
+    </>
+  );
+};
+const SobrePage: React.FC = () => {
+  return (
+    <>
+      <HeaderComponent />
+      <Sobre />
+    </>
+  );
+};
 
 function App() {
   return (
@@ -31,6 +49,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         {/* Adicione a seguinte linha para a rota ComoFuncionaPage */}
         <Route path="/como-funciona" element={<ComoFuncionaPage />} />
+        <Route path="/sobre" element={<SobrePage />} />
+        <Route path="/contato" element={<ContatoPage />} />
       </Routes>
       <GlobalStyles />
     </BrowserRouter>
