@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import InputMask from "react-input-mask";
+
 
 export const Box = styled.div`
   background-image: linear-gradient(#98d1b1, #7994a5);

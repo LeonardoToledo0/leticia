@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import { Instagram, Facebook, Whatsapp } from "react-bootstrap-icons";
-import InputMask from "react-input-mask";
+
 
 import * as S from "./styles";
 

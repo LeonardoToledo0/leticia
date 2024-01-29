@@ -27,27 +27,43 @@ export const HeaderComponent: React.FC = () => {
   }, []);
   return (
     <S.HeaderContainer>
+
+
       <S.TopBar className="px-3 py-2 border-bottom">
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+     
             <S.LogoLink
               href="/"
               className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
-            >
-              <span>
-                <img src={logoImage} alt="" width="65" height="65" />
-              </span>
+              ><img src={logoImage} alt="" width="65" height="65" />
+               <S.NavItem>
+                {window.innerWidth <= 800 && (
+                  <S.NavLink
+                  href="/"
+                  className="nav-link "
+                  hovered={hovered}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                  >
+                    <MenuButtonWide size={24} style={{listStyle:"none"}}/>
+                    Menu
+                  </S.NavLink>
+                )}
+              </S.NavItem>
+              
             </S.LogoLink>
+                
 
             <S.Navigation className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="/"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
+                  href="/"
+                  className="nav-link "
+                  hovered={hovered}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
                   >
                     <HouseDoor size={24} />
                     <span>Home</span>
@@ -57,11 +73,11 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="/como-funciona"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
+                  href="/como-funciona"
+                  className="nav-link "
+                  hovered={hovered}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
                   >
                     <HandIndexThumb size={24} />
                     Como Funciona
@@ -71,11 +87,11 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="/sobre"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
+                  href="/sobre"
+                  className="nav-link "
+                  hovered={hovered}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
                   >
                     <PersonCircle size={24} />
                     Sobre
@@ -85,35 +101,26 @@ export const HeaderComponent: React.FC = () => {
               <S.NavItem>
                 {windowWidth > 800 && (
                   <S.NavLink
-                    href="/contato"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
+                  href="/contato"
+                  className="nav-link "
+                  hovered={hovered}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
                   >
                     <Phone size={24} />
                     Contato
                   </S.NavLink>
                 )}
               </S.NavItem>
-              <S.NavItem>
-                {window.innerWidth <= 800 && (
-                  <S.NavLink
-                    href="/contato"
-                    className="nav-link "
-                    hovered={hovered}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                  >
-                    <MenuButtonWide size={24} />
-                    Menu
-                  </S.NavLink>
-                )}
-              </S.NavItem>
+            
+
+             
+               
             </S.Navigation>
           </div>
         </div>
       </S.TopBar>
+                
     </S.HeaderContainer>
   );
 };

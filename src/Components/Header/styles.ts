@@ -16,6 +16,10 @@ interface NavLinkProps {
 }
 
 export const HeaderContainer = styled.header<HeaderContainerProps>``;
+export const Headercell = styled.div`
+
+`
+export const Headercell2= styled.div``
 
 export const TopBar = styled.div<TopBarProps>`
   background-color: #98d1b1;
@@ -26,9 +30,21 @@ export const TopBar = styled.div<TopBarProps>`
   .dropdown-toggle:not(:focus) {
     outline: 0;
   }
+  
 `;
 
-export const LogoLink = styled.a<LogoLinkProps>``;
+export const LogoLink = styled.a<LogoLinkProps>`
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Adicione margin para separar os elementos */
+    & > * {
+      margin: 0 100px; /* Ajuste a margem conforme necessário */
+    }
+  }
+`;
 
 export const Navigation = styled.ul<NavigationProps>``;
 

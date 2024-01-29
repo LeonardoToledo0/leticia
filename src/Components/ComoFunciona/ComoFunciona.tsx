@@ -1,8 +1,8 @@
 import React from "react";
 import * as S from "./styles";
 import logoImage from "../../Assets/Imagens/logo-leticia.png";
-import cirurgia from "../../Assets/Imagens/cirurgia.jpg";
-import silvestre from "../../Assets/Imagens/silvestre.png";
+import cirurgia from "../../Assets/Imagens/cirurgia.png";
+import silvestre from "../../Assets/Imagens/silvestre.jpg";
 import emergencia from "../../Assets/Imagens/emergencia.jpg";
 import sevicos from "../../Assets/Imagens/servicos.jpg";
 import domiciliar from "../../Assets/Imagens/domiciliar.jpg";

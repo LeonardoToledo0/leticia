@@ -30,10 +30,7 @@ export const HrDivider = styled.hr`
 `;
 
 export const Carousel = styled.div`
-  /* CUSTOMIZE THE CAROUSEL
-
-
-/* Carousel base class */
+  /* Carousel base class */
   .carousel {
     margin-bottom: 4rem;
   }
@@ -52,6 +49,7 @@ export const Carousel = styled.div`
     width: 100%;
     height: 32rem;
   }
+
   @media (min-width: 40em) {
     /* Bump up size of carousel content */
     .carousel-caption p {
@@ -74,6 +72,7 @@ export const Carousel = styled.div`
 
 export const CarouselItem = styled.div`
   /* Estilos para os itens do carousel aqui */
+  margin-bottom: 3rem;
 `;
 
 export const Container = styled.div`
@@ -92,7 +91,7 @@ export const MarketingContainer = styled.div`
 `;
 
 export const Column = styled.div`
-  margin-top: 3rem;
+  margin-top: 5rem;
 
   text-align: center;
 `;
